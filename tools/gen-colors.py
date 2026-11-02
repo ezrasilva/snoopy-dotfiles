@@ -8,14 +8,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 PALETTES = {
-    # Domingo de manhã: papel de tirinha, tinta preta, casinha vermelha, céu azul
+    # Wallpaper "Snoopy na colina": nuvens creme, céu turquesa, grama verde, coleira vermelha
     "snoopy-day": dict(
-        bg_dim="#f3e6c4", bg0="#fff8e1", bg1="#fbf0d0", bg2="#f3e6c4", bg3="#eadbb0",
-        bg4="#e0cf9c", bg5="#c9b98a", bg_visual="#fde9a8", bg_red="#fbd9d3",
-        bg_green="#e4efcf", bg_blue="#d8e8f7", bg_yellow="#fdeaa0",
-        fg="#2e2a25", red="#d6382f", orange="#ef8a2e", yellow="#f2b705",
-        green="#5f9e46", aqua="#2f9c95", blue="#3e82c4", purple="#8d63a8",
-        grey0="#a89e86", grey1="#8c8268", grey2="#6f6650",
+        bg_dim="#e6e1b8", bg0="#f7f1d2", bg1="#f0ebc6", bg2="#e6e1b8", bg3="#d9d8ae",
+        bg4="#c8cfa5", bg5="#a6b79a", bg_visual="#e3e5b0", bg_red="#f4d6c8",
+        bg_green="#d8ebc4", bg_blue="#cfe9e6", bg_yellow="#f6e8a6",
+        fg="#26323a", red="#c8423a", orange="#e08a3c", yellow="#e0b020",
+        green="#3f9a64", aqua="#2a9d8f", blue="#1b8a99", purple="#7d6aa6",
+        grey0="#9aa28c", grey1="#7f897a", grey2="#5f6b66",
     ),
     # Barão Vermelho à noite: céu azul-marinho, lua e Woodstock amarelo
     "snoopy-night": dict(
