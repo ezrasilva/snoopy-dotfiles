@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="3840" height="2160">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141829"/><stop offset="1" stop-color="#2b324f"/></linearGradient></defs>
+<rect width="1920" height="1080" fill="url(#s)"/>
+<circle cx="1560" cy="230" r="110" fill="#fff3c4"/><circle cx="1520" cy="205" r="22" fill="#f1dfa0"/><circle cx="1600" cy="262" r="30" fill="#f1dfa0"/>
+        <circle cx="160" cy="120" r="3" fill="#fff3c4" opacity="0.9"/><circle cx="420" cy="260" r="2.5" fill="#fff3c4" opacity="0.8"/><circle cx="640" cy="90" r="3" fill="#fff3c4" opacity="0.9"/><circle cx="900" cy="200" r="2" fill="#fff3c4" opacity="0.7"/><circle cx="1180" cy="110" r="3.5" fill="#fff3c4" opacity="0.9"/><circle cx="1330" cy="300" r="2.5" fill="#fff3c4" opacity="0.8"/><circle cx="250" cy="420" r="2" fill="#fff3c4" opacity="0.6"/><circle cx="760" cy="380" r="2.5" fill="#fff3c4" opacity="0.7"/><circle cx="1780" cy="420" r="3" fill="#fff3c4" opacity="0.8"/><circle cx="1000" cy="60" r="2" fill="#fff3c4" opacity="0.7"/><circle cx="80" cy="330" r="2.5" fill="#fff3c4" opacity="0.8"/><circle cx="1700" cy="90" r="2.5" fill="#fff3c4" opacity="0.8"/>
+<path d="M0 760 Q300 600 640 720 T1300 700 T1920 690 V1080 H0Z" fill="#1f3a3a"/>
+<path d="M0 840 Q400 740 860 830 T1920 800 V1080 H0Z" fill="#2a4a44"/>
+<rect y="900" width="1920" height="180" fill="#27423c"/>
+<!-- casinha -->
+<g stroke="#0d0f1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<rect x="700" y="620" width="520" height="290" fill="#b83a33"/>
+<path d="M670 625 L960 430 L1250 625Z" fill="#8e2a26"/>
+<path d="M870 910 V760 Q870 700 960 700 Q1050 700 1050 760 V910Z" fill="#0d0f1a"/>
+<!-- Snoopy deitado no telhado -->
+<path d="M900 440 Q900 372 990 372 L1120 380 Q1170 385 1170 425 Q1170 455 1120 455 L930 455Z" fill="#f5ecd7"/>
+<path d="M1160 420 Q1215 405 1230 440 Q1215 455 1170 448" fill="#f5ecd7"/>
+<path d="M1000 452 L1010 500 Q1030 512 1050 500 L1048 452" fill="#f5ecd7"/>
+<path d="M1085 452 L1095 500 Q1115 512 1135 500 L1132 452" fill="#f5ecd7"/>
+<ellipse cx="840" cy="395" rx="72" ry="55" fill="#f5ecd7"/>
+<path d="M790 350 Q752 410 790 465 Q828 430 826 375Z" fill="#0d0f1a"/>
+<ellipse cx="905" cy="405" rx="55" ry="34" fill="#f5ecd7"/>
+<ellipse cx="940" cy="392" rx="18" ry="13" fill="#0d0f1a"/>
+</g>
+<circle cx="868" cy="383" r="7" fill="#0d0f1a"/>
+<path d="M885 420 Q915 436 940 418" stroke="#0d0f1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+<!-- Woodstock -->
+<g stroke="#0d0f1a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="1280" cy="395" rx="26" ry="23" fill="#ffd35c"/>
+<path d="M1300 398 L1322 405 L1300 411Z" fill="#ef8a2e"/>
+<path d="M1262 372 L1255 352 M1272 370 L1272 348 M1282 371 L1288 350" fill="none"/>
+<path d="M1262 418 L1262 430 M1292 418 L1292 430" fill="none"/>
+</g>
+<circle cx="1288" cy="388" r="4" fill="#0d0f1a"/>
+</svg>
