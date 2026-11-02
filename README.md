@@ -2,10 +2,6 @@
 
 Rice de Hyprland com tema **Peanuts / Snoopy**, em duas variantes:
 
-| Snoopy Day | Snoopy Night |
-|:--:|:--:|
-| ![](wallpapers/snoopy-day.png) | ![](wallpapers/snoopy-night.png) |
-
 - **Day**: papel de tirinha de domingo, tinta preta, casinha vermelha, céu azul, amarelo do Woodstock.
 - **Night**: céu azul-marinho do Barão Vermelho, lua, texto creme.
 
@@ -14,7 +10,7 @@ Baseado na estrutura de [MathisP75/summer-day-and-night](https://github.com/Math
 mexiam em Firefox/WebCord/Obsidian/VSCode foram removidos.
 
 ## O que tem
-`hypr/` · `waybar/` · `wofi/` · `kitty/` · `wallpapers/` (SVG + PNG 4K) · `tools/gen-colors.py`
+`hypr/` · `waybar/` · `wofi/` · `kitty/` · `tools/gen-colors.py`
 
 ## Dependências
 `hyprland hyprpaper waybar wofi kitty jq cliphist wl-clipboard libnotify` + fonte **JetBrainsMono Nerd Font**.
@@ -38,6 +34,9 @@ Edite as paletas em `tools/gen-colors.py` e rode `python3 tools/gen-colors.py` �
 kitty e power-menu de uma vez.
 
 ## Wallpapers
-Vetores em `wallpapers/*.svg`; para regenerar o PNG: `rsvg-convert -w 3840 wallpapers/snoopy-day.svg -o wallpapers/snoopy-day.png`.
+Por serem arte da Peanuts Worldwide, **não estão no repo**. Baixe um de dia e um de noite
+(ex.: [Snoopy](https://wallpapers.com/snoopy-pictures), [Woodstock](https://wallpapers.com/woodstock-background),
+[Peanuts](https://wallpapers.com/peanuts-background)) e salve como `~/Pictures/snoopy-day.png` e
+`~/Pictures/snoopy-night.png` (os caminhos ficam em `hypr/hyprpaper/*.conf`).
 
 *Peanuts e Snoopy são marcas de Peanuts Worldwide / Charles M. Schulz. Projeto de fã, sem fins comerciais.*
