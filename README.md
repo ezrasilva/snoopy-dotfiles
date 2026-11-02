@@ -2,7 +2,7 @@
 
 Rice de Hyprland com tema **Peanuts / Snoopy**, em duas variantes:
 
-- **Day**: papel de tirinha de domingo, tinta preta, casinha vermelha, céu azul, amarelo do Woodstock.
+- **Day**: nuvens creme, céu turquesa, grama verde e coleira vermelha do Snoopy.
 - **Night**: céu azul-marinho do Barão Vermelho, lua, texto creme.
 
 Baseado na estrutura de [MathisP75/summer-day-and-night](https://github.com/MathisP75/summer-day-and-night)
