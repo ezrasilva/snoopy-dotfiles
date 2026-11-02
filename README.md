@@ -13,7 +13,7 @@ mexiam em Firefox/WebCord/Obsidian/VSCode foram removidos.
 `hypr/` · `waybar/` · `wofi/` · `kitty/` · `tools/gen-colors.py`
 
 ## Dependências
-`hyprland hyprpaper waybar wofi kitty jq cliphist wl-clipboard libnotify` + fonte **JetBrainsMono Nerd Font**.
+`hyprland (0.56+, config em Lua) hyprpaper waybar wofi kitty jq cliphist wl-clipboard libnotify` + fonte **JetBrainsMono Nerd Font**.
 Opcionais: `grimblast hyprpicker` (screenshot), `papirus-icon-theme`.
 
 ## Instalar
@@ -22,7 +22,7 @@ Opcionais: `grimblast hyprpicker` (screenshot), `papirus-icon-theme`.
 ./install.sh             # symlinks em ~/.config (backup *.bak-<data> do que existir)
 ```
 ⚠️ Isso **substitui** `~/.config/hypr` (inclui o seu, se usar illogical-impulse/end-4). O backup fica ao lado;
-para voltar, apague o symlink e renomeie o `.bak`. Antes, ajuste em `hypr/hyprland.conf` o bloco
+para voltar, apague o symlink e renomeie o `.bak`. Antes, ajuste em `hypr/hyprland.lua` o bloco
 "AJUSTE PARA O SEU PC" (monitores e layout de teclado).
 
 ## Atalhos principais

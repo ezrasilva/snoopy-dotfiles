@@ -43,7 +43,9 @@ def write(path, text):
 
 def main():
     for name, p in PALETTES.items():
-        write(f"hypr/colors/{name}.conf", "\n".join(f"${k} = 0xff{p[k][1:]}" for k in KEYS) + "\n")
+        write(f"hypr/colors/{name}.lua",
+              "-- gerado por tools/gen-colors.py\nreturn {\n"
+              + "".join(f'    {k} = "rgb({p[k][1:]})",\n' for k in KEYS) + "}\n")
         css = "\n".join(f"@define-color {k} {p[k]};" for k in KEYS) + "\n"
         write(f"waybar/colors/{name}.css", css)
         write(f"wofi/colors/{name}.css", css)
