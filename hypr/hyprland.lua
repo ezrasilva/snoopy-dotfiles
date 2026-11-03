@@ -42,6 +42,8 @@ hl.bind("SUPER + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.exec_cmd("sh " .. scripts .. "/toggle-gaps.sh"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind("SUPER + S", hl.dsp.exec_cmd("sh " .. scripts .. "/freeze-screenshot.sh"))
+hl.bind("Print", hl.dsp.exec_cmd("sh " .. scripts .. "/screenshot.sh area"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("sh " .. scripts .. "/screenshot.sh screen"))
 
 local dirs = { Left = "l", Right = "r", Up = "u", Down = "d" }
 for key, d in pairs(dirs) do
