@@ -8,10 +8,10 @@
   "position": "top",
   "spacing": 15,
   "modules-left": ["custom/launcher", "clock", "clock#date"],
-  "modules-center": ["wlr/workspaces"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": ["pulseaudio", "network", "battery", "custom/powermenu"],
 
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
       "disable-scroll": true,
       "all-outputs": true,
       "on-click": "activate",
