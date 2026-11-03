@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Snoopy Settings
+Comment=Configurações do rice Hyprland com tema Snoopy
+Exec=@HOME@/.local/bin/snoopy-settings
+Icon=preferences-system
+Categories=Settings;DesktopSettings;
+StartupWMClass=dev.snoopy.Settings

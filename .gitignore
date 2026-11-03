@@ -2,3 +2,4 @@
 wallpapers/
 *.png
 *.jpg
+__pycache__/

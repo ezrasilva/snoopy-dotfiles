@@ -16,6 +16,11 @@ for d in hypr waybar wofi kitty dunst zsh fastfetch; do
   fi
   echo "link: $dst -> $REPO/$d"; run ln -s "$REPO/$d" "$dst"
 done
+# app de configurações: comando no PATH + entrada no menu de aplicativos
+run mkdir -p "$HOME/.local/bin" "$HOME/.local/share/applications"
+run ln -sf "$REPO/app/snoopy-settings" "$HOME/.local/bin/snoopy-settings"
+if [ $DRY = 0 ]; then sed "s#@HOME@#$HOME#" "$REPO/app/snoopy-settings.desktop" > "$HOME/.local/share/applications/snoopy-settings.desktop"; fi
+
 # zsh: 1 linha no ~/.zshrc (depois do p10k), com backup
 ZRC="$HOME/.zshrc"; ZLINE='[[ -f ~/.config/zsh/snoopy.zsh ]] && source ~/.config/zsh/snoopy.zsh # snoopy-dotfiles'
 if [ -f "$ZRC" ] && ! grep -qF "snoopy-dotfiles" "$ZRC"; then

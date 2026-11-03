@@ -129,6 +129,8 @@ def main():
               f"    background:     #{a(p['bg0'])};\n    background-alt: #{a(p['bg2'])};\n"
               f"    foreground:     #{a(p['fg'])};\n    selected:       #{a(p['red'])};\n"
               f"    active:         #{a(p['green'])};\n    urgent:         #{a(p['orange'])};\n}}\n")
+    import json
+    write("app/snoopy_settings/palettes.json", json.dumps(PALETTES, indent=2) + "\n")
     print("ok:", ", ".join(PALETTES))
 
 

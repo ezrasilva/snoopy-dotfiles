@@ -26,7 +26,8 @@ hl.env("GDK_BACKEND", "wayland,x11")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("hypridle")
+    -- usa os tempos salvos pelo Snoopy Settings, se existirem
+    hl.exec_cmd("sh -c 'f=$HOME/.config/snoopy/hypridle.conf; if [ -f \"$f\" ]; then hypridle -c \"$f\"; else hypridle; fi'")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
@@ -77,3 +78,11 @@ local wofi = "sh $HOME/.config/wofi/scripts/"
 hl.bind("SUPER + P", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "display-menu.sh"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "wifi-menu.sh"))
 hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "bluetooth-menu.sh"))
+
+-- Snoopy Settings (app GTK): janela flutuante e centralizada
+hl.window_rule({ match = { class = "^(dev.snoopy.Settings)$" }, float = true, center = true,
+                 size = { "(monitor_w*0.62)", "(monitor_h*0.78)" } })
+hl.bind("SUPER + comma", hl.dsp.exec_cmd("$HOME/.local/bin/snoopy-settings"))
+
+-- Ajustes feitos no Snoopy Settings (opcional; criado pelo app)
+pcall(dofile, os.getenv("HOME") .. "/.config/snoopy/settings.lua")

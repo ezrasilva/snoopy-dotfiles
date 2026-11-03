@@ -37,6 +37,14 @@ Para quem **não** usa illogical-impulse.
 ```
 ⚠️ Substitui `~/.config/hypr`. Ajuste o bloco "AJUSTE PARA O SEU PC" em `hypr/hyprland.lua` (monitor/teclado).
 
+## Snoopy Settings (app de configurações)
+`SUPER+,` (ou "Snoopy Settings" no launcher). GTK4 + libadwaita, com o visual do tema (Day/Night):
+**Tema** (troca Day/Night e wallpapers), **Aparência** (gaps, borda, arredondamento, sombra, blur, animações),
+**Telas** (estender/espelhar, resolução, escala), **Som**, **Energia** (brilho e tempos do hypridle),
+**Rede** (Wi-Fi com senha e Bluetooth), **Entrada** (teclado e mouse) e **Atalhos** (busca nos atalhos reais).
+Mudanças aplicam ao vivo (`hyprctl eval`) e ficam em `~/.config/snoopy/settings.lua`, lido pelo `hyprland.lua`.
+Requer `python-gobject gtk4 libadwaita`.
+
 ## Terminal
 Kitty afinado (fonte 13, padding, abas arredondadas, cursor com rastro), prompt **powerlevel10k** nas cores do tema
 (segue Day/Night) e `ff` = fastfetch com o wallpaper do Snoopy. O `install.sh` acrescenta 1 linha ao `~/.zshrc`
