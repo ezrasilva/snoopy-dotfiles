@@ -16,14 +16,26 @@ mexiam em Firefox/WebCord/Obsidian/VSCode foram removidos.
 `hyprland (0.56+, config em Lua) hyprpaper waybar wofi kitty jq cliphist wl-clipboard libnotify` + fonte **JetBrainsMono Nerd Font**.
 Opcionais: `grimblast hyprpicker` (screenshot), `papirus-icon-theme`.
 
-## Instalar
+## Dois modos
+
+### A) Por cima do illogical-impulse (end-4) — recomendado se você já usa
+Não substitui nada seu. O shell gera as cores Material You a partir dos wallpapers do Snoopy.
 ```sh
-./install.sh --dry-run   # mostra o que faria
-./install.sh             # symlinks em ~/.config (backup *.bak-<data> do que existir)
+./install-ii.sh --dry-run   # mostra o que faria
+./install-ii.sh             # copia 2 arquivos p/ ~/.config/hypr/custom e acrescenta 1 linha em custom/general.lua (com backup)
+hyprctl reload
 ```
-⚠️ Isso **substitui** `~/.config/hypr` (inclui o seu, se usar illogical-impulse/end-4). O backup fica ao lado;
-para voltar, apague o symlink e renomeie o `.bak`. Antes, ajuste em `hypr/hyprland.lua` o bloco
-"AJUSTE PARA O SEU PC" (monitores e layout de teclado).
+- `SUPER+ALT+T` alterna **Day/Night** (ou `~/.config/hypr/custom/scripts/snoopy-theme.sh day|night`).
+- Aplica bordas vermelhas, gaps e sombra estilo tirinha (`ii/hypr/custom/snoopy.lua`).
+- Desfazer: `./install-ii.sh --uninstall`.
+
+### B) Rice completo (Hyprland + Waybar + Wofi + Kitty)
+Para quem **não** usa illogical-impulse.
+```sh
+./install.sh --dry-run
+./install.sh             # symlinks em ~/.config (backup *.bak-<data>)
+```
+⚠️ Substitui `~/.config/hypr`. Ajuste o bloco "AJUSTE PARA O SEU PC" em `hypr/hyprland.lua` (monitor/teclado).
 
 ## Atalhos principais
 `SUPER+Enter` kitty · `SUPER+D` launcher · `SUPER+B` power menu · `SUPER+C` calculadora ·
