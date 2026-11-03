@@ -10,6 +10,12 @@ hl.config({
         touchpad = { natural_scroll = true },
     },
 })
+-- Workspaces: 1-5 na tela principal, 6-10 na secundária (se ela não existir, tudo cai na principal)
+local main, side = "eDP-1", "HDMI-A-1"
+for i = 1, 10 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = (i <= 5) and main or side,
+                        persistent = true, default = (i == 1 or i == 6) })
+end
 -- ---------------------------------------------------------------------------
 
 hl.config({ misc = { disable_hyprland_logo = true } })
@@ -40,10 +46,15 @@ local dirs = { Left = "l", Right = "r", Up = "u", Down = "d" }
 for key, d in pairs(dirs) do
     hl.bind("SUPER + " .. key, hl.dsp.focus({ direction = d }))
 end
-for i = 1, 9 do
-    hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
-    hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+for i = 1, 10 do
+    local key = tostring(i % 10)
+    hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + bracketright", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + bracketleft", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
