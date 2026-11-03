@@ -29,6 +29,8 @@ window#waybar {
 #clock,
 #clock-date,
 #workspaces,
+#backlight,
+#bluetooth,
 #pulseaudio,
 #network,
 #battery,
@@ -49,6 +51,16 @@ window#waybar {
 
 #workspaces {
   padding: 0px;
+}
+
+#workspaces button {
+  color: @fg;
+  padding: 0 6px;
+}
+
+#workspaces button.visible {
+  background-color: @bg4;
+  border-radius: 10px;
 }
 
 #workspaces button.active {
