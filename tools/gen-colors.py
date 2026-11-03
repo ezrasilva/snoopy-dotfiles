@@ -46,6 +46,10 @@ def main():
         write(f"hypr/colors/{name}.lua",
               "-- gerado por tools/gen-colors.py\nreturn {\n"
               + "".join(f'    {k} = "rgb({p[k][1:]})",\n' for k in KEYS) + "}\n")
+        write(f"hypr/colors/{name}.conf",
+              "# gerado por tools/gen-colors.py (usado pelo hyprlock)\n"
+              + "".join(f"${k} = rgb({p[k][1:]})\n" for k in KEYS)
+              + f"$wallpaper = ~/Pictures/{name}.png\n")
         css = "\n".join(f"@define-color {k} {p[k]};" for k in KEYS) + "\n"
         write(f"waybar/colors/{name}.css", css)
         write(f"wofi/colors/{name}.css", css)

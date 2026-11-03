@@ -20,6 +20,9 @@ if [ -f "$HOME/.config/kitty/kitty.conf" ]; then
   pkill -USR1 kitty
 fi
 
+# hyprlock (1ª linha importa as cores/wallpaper do tema)
+[ -f "$HOME/.config/hypr/hyprlock.conf" ] && sed -i "1s#.*#source = ~/.config/hypr/colors/$T.conf#" "$HOME/.config/hypr/hyprlock.conf"
+
 # GTK / ícones / fonte (opcional)
 if command -v gsettings >/dev/null 2>&1; then
   GTK=$(get .gtkTheme); ICON=$(get .iconTheme); FONT=$(get .font)
