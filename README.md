@@ -37,6 +37,11 @@ Para quem **não** usa illogical-impulse.
 ```
 ⚠️ Substitui `~/.config/hypr`. Ajuste o bloco "AJUSTE PARA O SEU PC" em `hypr/hyprland.lua` (monitor/teclado).
 
+## Terminal
+Kitty afinado (fonte 13, padding, abas arredondadas, cursor com rastro), prompt **powerlevel10k** nas cores do tema
+(segue Day/Night) e `ff` = fastfetch com o wallpaper do Snoopy. O `install.sh` acrescenta 1 linha ao `~/.zshrc`
+(com backup). Opcionais para cores/sugestões: `sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting fzf`.
+
 ## Atalhos principais
 `SUPER+Enter` kitty · `SUPER+D` launcher · `SUPER+B` power menu · `SUPER+C` calculadora ·
 `SUPER+V` clipboard · `SUPER+.` emoji · `SUPER+SHIFT+T` **trocar Day/Night** · `SUPER+Q` fechar.

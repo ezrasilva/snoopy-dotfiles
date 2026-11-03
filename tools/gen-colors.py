@@ -92,6 +92,8 @@ def main():
     frame_color = "{p['orange']}"
     timeout = 0
 """)
+        write(f"zsh/colors-{name}.zsh", "# gerado por tools/gen-colors.py\ntypeset -gA SNOOPY=(\n"
+              + "".join(f"    {k} '{p[k]}'\n" for k in KEYS) + ")\n")
         css = "\n".join(f"@define-color {k} {p[k]};" for k in KEYS) + "\n"
         write(f"waybar/colors/{name}.css", css)
         write(f"wofi/colors/{name}.css", css)
@@ -100,7 +102,7 @@ def main():
         write(f"wofi/themes/{name}.css", css + "\n" + body)
 
         ansi = [
-            ("0", "8", p["bg3"], p["bg5"]), ("1", "9", p["red"], p["red"]),
+            ("0", "8", p["fg"] if name == "snoopy-day" else p["bg3"], p["grey1"] if name == "snoopy-day" else p["bg5"]), ("1", "9", p["red"], p["red"]),
             ("2", "10", p["green"], p["green"]), ("3", "11", p["yellow"], p["yellow"]),
             ("4", "12", p["blue"], p["blue"]), ("5", "13", p["purple"], p["purple"]),
             ("6", "14", p["aqua"], p["aqua"]),
