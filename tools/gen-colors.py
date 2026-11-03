@@ -50,9 +50,54 @@ def main():
               "# gerado por tools/gen-colors.py (usado pelo hyprlock)\n"
               + "".join(f"${k} = rgb({p[k][1:]})\n" for k in KEYS)
               + f"$wallpaper = ~/Pictures/{name}.png\n")
+        write(f"dunst/{name}.dunstrc", f"""# gerado por tools/gen-colors.py ({name})
+[global]
+    monitor = 0
+    follow = mouse
+    width = (260, 360)
+    origin = top-right
+    offset = (14, 56)
+    padding = 12
+    horizontal_padding = 14
+    frame_width = 3
+    corner_radius = 14
+    gap_size = 8
+    font = JetBrainsMono Nerd Font 11
+    markup = full
+    format = "<b>%s</b>\\n%b"
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 6
+    progress_bar_height = 12
+    icon_position = left
+    max_icon_size = 48
+    mouse_left_click = close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "{p['bg0']}"
+    foreground = "{p['fg']}"
+    frame_color = "{p['bg5']}"
+    timeout = 4
+
+[urgency_normal]
+    background = "{p['bg0']}"
+    foreground = "{p['fg']}"
+    frame_color = "{p['red']}"
+    highlight = "{p['blue']}"
+    timeout = 6
+
+[urgency_critical]
+    background = "{p['bg_red']}"
+    foreground = "{p['fg']}"
+    frame_color = "{p['orange']}"
+    timeout = 0
+""")
         css = "\n".join(f"@define-color {k} {p[k]};" for k in KEYS) + "\n"
         write(f"waybar/colors/{name}.css", css)
         write(f"wofi/colors/{name}.css", css)
+        # tema do wofi autocontido (o @import relativo quebrava dependendo do diretório de execução)
+        body = (ROOT / f"wofi/themes/{name}.body.css").read_text()
+        write(f"wofi/themes/{name}.css", css + "\n" + body)
 
         ansi = [
             ("0", "8", p["bg3"], p["bg5"]), ("1", "9", p["red"], p["red"]),

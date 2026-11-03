@@ -9,7 +9,7 @@
   "spacing": 15,
   "modules-left": ["custom/launcher", "clock", "clock#date"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "network", "battery", "custom/powermenu"],
+  "modules-right": ["backlight", "pulseaudio", "bluetooth", "network", "battery", "custom/powermenu"],
 
   "hyprland/workspaces": {
       "disable-scroll": true,
@@ -77,15 +77,36 @@
           "car": "",
           "default": ["", "", ""]
       },
+      "on-click": "sh ~/.config/hypr/scripts/osd.sh volume mute",
       "on-click-right": "pavucontrol",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-scroll-up": "sh ~/.config/hypr/scripts/osd.sh volume up",
+      "on-scroll-down": "sh ~/.config/hypr/scripts/osd.sh volume down",
   },
+
+"bluetooth": {
+      "format": "󰂯",
+      "format-off": "󰂲",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂱 {num_connections}",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}",
+      "on-click": "pkill wofi || sh ~/.config/wofi/scripts/bluetooth-menu.sh"
+},
+
+"backlight": {
+      "format": "󰃠 {percent}%",
+      "on-scroll-up": "sh ~/.config/hypr/scripts/osd.sh brightness up",
+      "on-scroll-down": "sh ~/.config/hypr/scripts/osd.sh brightness down"
+},
 
 "network": {
       "format-wifi": " {signalStrength}%",
       "format-ethernet": " {signalStrength}%",
       "format-disconnected": "󰤭",
-      "on-click": "sh ~/.config/wofi/scripts/wifimenu.sh"
+      "on-click": "pkill wofi || sh ~/.config/wofi/scripts/wifi-menu.sh",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+      "tooltip-format-ethernet": "{ifname}"
 },
 
 "battery": {

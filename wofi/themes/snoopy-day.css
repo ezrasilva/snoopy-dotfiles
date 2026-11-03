@@ -1,4 +1,27 @@
-@import ".config/wofi/colors/snoopy-day.css";
+@define-color bg_dim #e6e1b8;
+@define-color bg0 #f7f1d2;
+@define-color bg1 #f0ebc6;
+@define-color bg2 #e6e1b8;
+@define-color bg3 #d9d8ae;
+@define-color bg4 #c8cfa5;
+@define-color bg5 #a6b79a;
+@define-color bg_visual #e3e5b0;
+@define-color bg_red #f4d6c8;
+@define-color bg_green #d8ebc4;
+@define-color bg_blue #cfe9e6;
+@define-color bg_yellow #f6e8a6;
+@define-color fg #26323a;
+@define-color red #c8423a;
+@define-color orange #e08a3c;
+@define-color yellow #e0b020;
+@define-color green #3f9a64;
+@define-color aqua #2a9d8f;
+@define-color blue #1b8a99;
+@define-color purple #7d6aa6;
+@define-color grey0 #9aa28c;
+@define-color grey1 #7f897a;
+@define-color grey2 #5f6b66;
+
 
 * {
     font-family: JetBrainsMono Nerd Font, FontAwesome;
@@ -41,7 +64,7 @@ window {
     margin: 20px;
     padding: 0px;
     border-radius: 0px;
-    background-color: #00000000;
+    background-color: transparent;
 }
 
 #scroll {

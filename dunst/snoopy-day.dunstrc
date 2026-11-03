@@ -1,0 +1,41 @@
+# gerado por tools/gen-colors.py (snoopy-day)
+[global]
+    monitor = 0
+    follow = mouse
+    width = (260, 360)
+    origin = top-right
+    offset = (14, 56)
+    padding = 12
+    horizontal_padding = 14
+    frame_width = 3
+    corner_radius = 14
+    gap_size = 8
+    font = JetBrainsMono Nerd Font 11
+    markup = full
+    format = "<b>%s</b>\n%b"
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 6
+    progress_bar_height = 12
+    icon_position = left
+    max_icon_size = 48
+    mouse_left_click = close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#f7f1d2"
+    foreground = "#26323a"
+    frame_color = "#a6b79a"
+    timeout = 4
+
+[urgency_normal]
+    background = "#f7f1d2"
+    foreground = "#26323a"
+    frame_color = "#c8423a"
+    highlight = "#1b8a99"
+    timeout = 6
+
+[urgency_critical]
+    background = "#f4d6c8"
+    foreground = "#26323a"
+    frame_color = "#e08a3c"
+    timeout = 0

@@ -20,7 +20,6 @@ hl.env("GDK_BACKEND", "wayland,x11")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("dunst")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -47,3 +46,23 @@ for i = 1, 9 do
 end
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Teclas Fn: volume, microfone, brilho e mídia (funcionam com a tela travada)
+local osd = "sh " .. scripts .. "/osd.sh "
+local fn = { locked = true, repeating = true }
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(osd .. "volume up"), fn)
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(osd .. "volume down"), fn)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(osd .. "volume mute"), { locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(osd .. "mic mute"), { locked = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(osd .. "brightness up"), fn)
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(osd .. "brightness down"), fn)
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl pause"), { locked = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- Menus: telas (SUPER+P), Wi-Fi e Bluetooth também pelo teclado
+local wofi = "sh $HOME/.config/wofi/scripts/"
+hl.bind("SUPER + P", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "display-menu.sh"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "wifi-menu.sh"))
+hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("pkill wofi || " .. wofi .. "bluetooth-menu.sh"))
